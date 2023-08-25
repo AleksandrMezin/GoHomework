@@ -15,4 +15,6 @@ func main() {
 	plus(13, 54)
 	x := func(fn func(i int) int, i int) func(int) int { return fn }(func(i int) int { return i + 1 }, 5)
 	fmt.Printf("%T", x)
+
+	fmt.Println("go go go")
 }
