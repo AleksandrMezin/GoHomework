@@ -1,20 +1,37 @@
 package main
+
 //sisi
 import "fmt"
 
-func read(message string) string {
-	return message
-}
-
-func plus(a, b int) {
-	fmt.Println(a + b)
+func GetGrade(a, b, c int) string {
+	var middle int
+	var grade string
+	middle = (a + b + c) / 3
+	switch {
+	case 90 <= middle && middle <= 100:
+		grade = "A"
+	case 80 <= middle && middle < 90:
+		grade = "B"
+	case 70 <= middle && middle <= 80:
+		grade = "C"
+	case 60 <= middle && middle <= 70:
+		grade = "D"
+	case 0 <= middle && middle < 60:
+		grade = "F"
+	}
+	return grade
 }
 
 func main() {
-	fmt.Println(read("Dudu and Pupu"))
-	plus(13, 54)
-	x := func(fn func(i int) int, i int) func(int) int { return fn }(func(i int) int { return i + 1 }, 5)
-	fmt.Printf("%T", x)
-
-	fmt.Println("go go go")
+	result := 1
+	var n int
+	_, err := fmt.Scan(&n)
+	if err != nil {
+		return
+	}
+	for i := 1; i <= n; i++ {
+		result *= i
+		fmt.Println(result)
+	}
+	fmt.Println(result)
 }
