@@ -34,4 +34,5 @@ func main() {
 		fmt.Println(result)
 	}
 	fmt.Println(result)
+	fmt.Println("Test")
 }
