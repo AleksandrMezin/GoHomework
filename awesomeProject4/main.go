@@ -84,19 +84,16 @@ func main() {
 	inputFileName := os.Args[1]
 	outputFileName := os.Args[2]
 
-	// Check if the output file exists, create if not
 	if _, err := os.Stat(outputFileName); os.IsNotExist(err) {
 		_, _ = os.Create(outputFileName)
 	}
 
-	// Clear the output file
 	err := ioutil.WriteFile(outputFileName, []byte(""), 0644)
 	if err != nil {
 		fmt.Printf("Error clearing output file: %v\n", err)
 		os.Exit(1)
 	}
 
-	// Process the input file and write results to the output file
 	err = processFile(inputFileName, outputFileName)
 	if err != nil {
 		fmt.Printf("Error processing file: %v\n", err)
