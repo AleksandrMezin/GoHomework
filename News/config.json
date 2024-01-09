@@ -1,0 +1,8 @@
+
+{
+  "feeds": [
+    "https://lenta.ru/news",
+    "https://news.yandex.ru"
+  ],
+  "refresh": 10
+}
